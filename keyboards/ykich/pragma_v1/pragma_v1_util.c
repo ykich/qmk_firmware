@@ -14,11 +14,11 @@ const char *get_active_layer_name(void) {
         case 2:
             return PSTR("Raise(2)\n");
         case 3:
-            return PSTR("Fn(3)\n");
+            return PSTR("WinBase(3)\n");
         case 4:
-            return PSTR("Adj(4)\n");
+            return PSTR("WinLower(4)\n");
         case 5:
-            return PSTR("Num(5)\n");
+            return PSTR("WinRaise(5)\n");
         case 6:
             return PSTR("Track(6)\n");
         default:

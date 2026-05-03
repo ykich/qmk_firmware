@@ -12,16 +12,16 @@ enum layer_names {
     _BASE = 0,
     _LOWER = 1,
     _RAISE = 2,
-    _FN = 3,
-    _ADJUST = 4,
-    _NUMPAD = 5,
+    _WIN_BASE = 3,
+    _WIN_LOWER = 4,
+    _WIN_RAISE = 5,
     _TRACKBALL = 6,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
         // Row 0: Left(8) + Right(8) = 16 keys
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_SPC,     KC_7,    KC_8,    KC_9,     KC_0,     JP_MINS, JP_CIRC, JP_YEN,  KC_BSPC,
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    DF(_WIN_BASE), KC_7,    KC_8,    KC_9,     KC_0,     JP_MINS, JP_CIRC, JP_YEN,  KC_BSPC,
         // Row 1: Left(7) + Right(7+Enter2U) = 15 keys
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_SPC,              KC_Y,    KC_U,    KC_I,     KC_O,     KC_P,    JP_AT,   JP_LBRC, KC_ENT,
         // Row 2: Left(7) + Right(7) = 14 keys
@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Row 3: Left(7) + Right(8) = 15 keys
         KC_LSFT, KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLSH, JP_BSLS, KC_UP,   KC_RSFT,
         // Row 4: Left(7) + Middle(3 mouse buttons) + Right(8) = 18 keys
-        KC_LCTL, KC_LGUI, KC_LALT, LT(_LOWER, JP_MHEN), KC_SPC, KC_SPC, KC_SPC,    MS_BTN1, MS_BTN2, MS_BTN3,  KC_SPC,   LT(_RAISE, JP_HENK), KC_RALT, KC_RGUI, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTL, KC_LGUI, KC_LALT, LT(_LOWER, JP_MHEN), KC_SPC, KC_SPC, KC_SPC,    MS_BTN1, MS_BTN3, MS_BTN2,  KC_SPC,   LT(_RAISE, JP_HENK), KC_RALT, KC_RGUI, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [_LOWER] = LAYOUT(
         _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______, _______,
@@ -46,21 +46,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______,         _______, _______, _______,     _______, _______, _______,  _______, _______,         _______, _______, _______, _______, _______, _______
     ),
 
-    [_FN] = LAYOUT(
+    [_WIN_BASE] = LAYOUT(
+        // Row 0: Left(8) + Right(8) = 16 keys
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    DF(_BASE),  KC_7,    KC_8,    KC_9,     KC_0,     JP_MINS, JP_CIRC, JP_YEN,  KC_BSPC,
+        // Row 1: Left(7) + Right(7+Enter2U) = 15 keys
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_SPC,              KC_Y,    KC_U,    KC_I,     KC_O,     KC_P,    JP_AT,   JP_LBRC, KC_ENT,
+        // Row 2: Left(7) + Right(7) = 14 keys
+        KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_SPC,              KC_H,    KC_J,    KC_K,     KC_L,     JP_SCLN, JP_COLN, JP_RBRC,
+        // Row 3: Left(7) + Right(8) = 15 keys
+        KC_LSFT, KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLSH, JP_BSLS, KC_UP,   KC_RSFT,
+        // Row 4: Left(7) + Middle(3 mouse buttons) + Right(8) = 18 keys
+        KC_LCTL, KC_LWIN, KC_LALT, LT(_WIN_LOWER, JP_MHEN), KC_SPC, KC_SPC, KC_SPC,    MS_BTN1, MS_BTN3, MS_BTN2,  KC_SPC,   LT(_WIN_RAISE, JP_HENK), KC_RALT, KC_RWIN, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
+    ),
+    [_WIN_LOWER] = LAYOUT(
         _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______,         _______, _______, _______,     _______, _______, _______,  _______, _______,         _______, _______, _______, _______, _______, _______
     ),
-    [_ADJUST] = LAYOUT(
-        _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______,         _______, _______, _______,     _______, _______, _______,  _______, _______,         _______, _______, _______, _______, _______, _______
-    ),
-    [_NUMPAD] = LAYOUT(
+    [_WIN_RAISE] = LAYOUT(
         _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, _______, _______,
@@ -80,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 layer_state_t layer_state_set_user(layer_state_t state) {
 
     switch (get_highest_layer(state)) {
-    case _BASE:
+    case _BASE | _WIN_BASE:
         cocot_set_scroll_mode(false);
         break;
     default:
