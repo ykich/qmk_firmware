@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Row 2: Left(7) + Right(7) = 14 keys
         KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_SPC,              KC_H,    KC_J,    KC_K,     KC_L,     JP_SCLN, JP_COLN, JP_RBRC,
         // Row 3: Left(7) + Right(8) = 15 keys
-        KC_LSFT, KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLSH, JP_BSLS, KC_UP,   KC_RSFT,
+        KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, KC_SPC,                KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLSH, JP_BSLS, KC_UP,   KC_RSFT,
         // Row 4: Left(7) + Middle(3 mouse buttons) + Right(8) = 18 keys
         KC_LCTL, KC_LGUI, KC_LALT, LT(_LOWER, JP_MHEN), KC_SPC, KC_SPC, KC_SPC,    MS_BTN1, MS_BTN3, MS_BTN2,  KC_SPC,   LT(_RAISE, JP_HENK), KC_RALT, KC_RGUI, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
     ),
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Row 2: Left(7) + Right(7) = 14 keys
         KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_SPC,              KC_H,    KC_J,    KC_K,     KC_L,     JP_SCLN, JP_COLN, JP_RBRC,
         // Row 3: Left(7) + Right(8) = 15 keys
-        KC_LSFT, KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLSH, JP_BSLS, KC_UP,   KC_RSFT,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_NUBS,             KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLSH, JP_BSLS, KC_UP,   KC_RSFT,
         // Row 4: Left(7) + Middle(3 mouse buttons) + Right(8) = 18 keys
         KC_LCTL, KC_LWIN, KC_LALT, LT(_WIN_LOWER, JP_MHEN), KC_SPC, KC_SPC, KC_SPC,    MS_BTN1, MS_BTN3, MS_BTN2,  KC_SPC,   LT(_WIN_RAISE, JP_HENK), KC_RALT, KC_RWIN, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
     ),

@@ -20,3 +20,6 @@
 
 #define POINTING_DEVICE_ROTATION_180
 #define OLED_FONT_H "keyboards/ykich/pragma_v1/lib/glcdfont.c"
+
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U

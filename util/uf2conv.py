@@ -241,9 +241,12 @@ def get_drives():
 
 
 def board_id(path):
-    with open(path + INFO_FILE, mode='r') as file:
-        file_content = file.read()
-    return re.search(r"Board-ID: ([^\r\n]*)", file_content).group(1)
+    try:
+        with open(path + INFO_FILE, mode='r') as file:
+            file_content = file.read()
+        return re.search(r"Board-ID: ([^\r\n]*)", file_content).group(1)
+    except Exception:
+        return "Unknown"
 
 
 def list_drives():

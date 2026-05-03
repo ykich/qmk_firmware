@@ -1,7 +1,7 @@
 {
   "name": "pragma v1",
   "vendorId": "0xC331",
-  "productId": "0x0000",
+  "productId": "0x0001",
   "lighting": "none",
   "matrix": { "rows":10, "cols": 9 },
   "customKeycodes": [
